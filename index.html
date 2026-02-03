@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <title>iOS App Switcher</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="phone-frame">
-    <div class="phone-screen">
+    <div class="phone-screen" id="screen">
       <div class="status-bar">
         <span class="time">9:41</span>
         <div class="status-icons">
@@ -17,11 +17,30 @@
           <span class="battery">🔋</span>
         </div>
       </div>
-      <div class="app-switcher" id="appSwitcher">
-        <div class="cards-container" id="cardsContainer"></div>
+      
+      <!-- 桌面视图 -->
+      <div class="home-screen" id="homeScreen">
+        <div class="app-grid" id="appGrid"></div>
+        <div class="dock" id="dock"></div>
       </div>
-      <div class="home-indicator"></div>
+      
+      <!-- 最近任务视图 -->
+      <div class="switcher-view" id="switcherView">
+        <div class="cards-stack" id="cardsStack"></div>
+      </div>
+      
+      <!-- 当前应用视图 -->
+      <div class="app-view" id="appView">
+        <div class="app-content" id="appContent"></div>
+      </div>
+      
+      <div class="home-indicator" id="homeIndicator"></div>
     </div>
+  </div>
+  <div class="instructions">
+    <p>↑ 从底部上滑：回桌面 / 打开任务切换</p>
+    <p>← → 左右滑动：切换任务</p>
+    <p>↑ 上滑卡片：关闭应用</p>
   </div>
   <script src="app.js"></script>
 </body>
